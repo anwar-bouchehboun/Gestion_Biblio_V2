@@ -2,6 +2,7 @@ package org.example.CoucheMetier.Interface.Implemnation;
 
 import org.example.CoucheMetier.Entites.Magasin;
 import org.example.CoucheMetier.Interface.Bebliothique;
+import org.example.CouchePresentation.CostumColor;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,9 +51,8 @@ public class MagasinImp implements Bebliothique<Magasin> {
         if (Magasins.isEmpty()) {
             System.out.println("Aucun magasin n'est disponible dans la bibliothèque.");
         } else {
-            System.out.printf("%-10s | %-20s | %-30s | %-15s | %-10s  | %-12s | %-15s %n",
-                    "ID", "Titre", "Auteur", "Date Pub.", "Pages", "Statut", "Numero");
-
+            System.out.printf(CostumColor.WHITE_BOLD_BRIGHT+"%-10s | %-20s | %-30s | %-15s | %-10s  | %-12s | %-15s %n",
+                    "ID", "Titre", "Auteur", "Date Pub.", "Pages", "Statut", "Numero"+ CostumColor.RESET);
             System.out.println("---------------------------------------------------------------------------------------------------------------------------------");
 
             Magasins.forEach(Magasin::afficherDetails);

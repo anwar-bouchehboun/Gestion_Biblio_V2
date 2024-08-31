@@ -3,6 +3,7 @@ package org.example.CoucheMetier.Interface.Implemnation;
 
 import org.example.CoucheMetier.Entites.Livre;
 import org.example.CoucheMetier.Interface.Bebliothique;
+import org.example.CouchePresentation.CostumColor;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,11 +53,12 @@ public class LivreImp implements Bebliothique<Livre> {
     public void afficherDetails() {
 
         if (livres.isEmpty()) {
-            System.out.println("Aucun lIVRE n'est disponible dans la bibliothèque.");
-        } else {
-            System.out.printf("%-10s | %-20s | %-30s | %-15s | %-10s  | %-12s | %-15s %n",
-                    "ID", "Titre", "Auteur", "Date Pub.", "Pages", "Statut", "ISBN");
 
+            System.out.println(CostumColor.WHITE_BOLD_BRIGHT+"| Aucun lIVRE n'est disponible dans la bibliothèque. "+ CostumColor.RESET);
+
+        } else {
+            System.out.printf(CostumColor.WHITE_BOLD_BRIGHT+"%-10s | %-20s | %-30s | %-15s | %-10s  | %-12s | %-15s %n",
+                    "ID", "Titre", "Auteur", "Date Pub.", "Pages", "Statut", "ISBN"+ CostumColor.RESET);
             System.out.println("---------------------------------------------------------------------------------------------------------------------------------");
 
            livres.forEach(Livre::afficherDetails);
