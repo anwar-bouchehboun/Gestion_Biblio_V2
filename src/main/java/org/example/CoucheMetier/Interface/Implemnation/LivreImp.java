@@ -18,20 +18,20 @@ public class LivreImp implements Bebliothique<Livre> {
 
     public void add(Livre document) {
         livres.add(document);
-        System.out.println(livres);
+        System.out.println(CostumColor.WHITE_BOLD_BRIGHT+livres+ CostumColor.RESET);
         listeMapping.put(document.getId(),document);
     }
 
     @Override
     public void emprunt(String titre) {
         Optional<Livre> doc=   getDoc(titre);
-        doc.ifPresentOrElse(Livre::emprunter, () -> System.out.println("Livre introuvable."));
+        doc.ifPresentOrElse(Livre::emprunter, () -> System.out.println(CostumColor.WHITE_BOLD_BRIGHT+"Livre introuvable."+ CostumColor.RESET));
     }
 
     @Override
     public void retourner(String titre) {
         Optional<Livre> doc=   getDoc(titre);
-        doc.ifPresentOrElse(Livre::retourner, () -> System.out.println("Livre introuvable."));
+        doc.ifPresentOrElse(Livre::retourner, () -> System.out.println(CostumColor.WHITE_BOLD_BRIGHT+"Livre introuvable."+ CostumColor.RESET));
     }
 
     @Override
@@ -44,7 +44,7 @@ public class LivreImp implements Bebliothique<Livre> {
     }
     public Optional<Livre> RechDoc(String titre) {
         Optional<Livre> doc=   getDoc(titre);
-        doc.ifPresentOrElse(Livre::afficherDetailslivre, () -> System.out.println("Livre introuvable."));
+        doc.ifPresentOrElse(Livre::afficherDetailslivre, () -> System.out.println(CostumColor.WHITE_BOLD_BRIGHT+"Livre introuvable."+ CostumColor.RESET));
         return doc;
     }
 
