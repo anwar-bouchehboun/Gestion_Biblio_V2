@@ -100,15 +100,18 @@ public class Livrecontroller {
         }
     }
     public void emprunterLivre(){
-        String titre = PattrenUtils.getStringInput("Entrez le titre du document :");
+        System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"|• Emprunter un document (Livre)"  + CostumColor.RESET);
+        String titre = PattrenUtils.getStringInput("Entrez le titre du document  emprunter:");
         livreImp.emprunt(titre);
     }
     public void retournerLivre(){
-        String titre = PattrenUtils.getStringInput("Entrez le titre du document :");
+        System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"|• retourner un document (Livre)"  + CostumColor.RESET);
+        String titre = PattrenUtils.getStringInput("Entrez le titre du document retourner :");
         livreImp.retourner(titre);
     }
     public void RechDocLivre(){
-        String titre = PattrenUtils.getStringInput("Entrez le titre du document :");
+        System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"|• Rechercher un document (Livre) "+ CostumColor.RESET);
+        String titre = PattrenUtils.getStringInput("Entrez le titre du document Recherche :");
         livreImp.RechDoc(titre);
     }
 }

@@ -97,15 +97,20 @@ public class Magasincontroller {
         }
     }
     public void emprunterLivre(){
-        String titre = PattrenUtils.getStringInput("Entrez le titre du document :");
+        System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"|• Emprunter un document (Magazine)"  + CostumColor.RESET);
+        String titre = PattrenUtils.getStringInput("Entrez le titre du document emprunter :");
         MagasinImp.emprunt(titre);
     }
     public void retournerLivre(){
-        String titre = PattrenUtils.getStringInput("Entrez le titre du document :");
+        System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"|• Retourner un document (Magazine)"  + CostumColor.RESET);
+
+        String titre = PattrenUtils.getStringInput("Entrez le titre du document retourner :");
         MagasinImp.retourner(titre);
     }
     public void RechDocLivre(){
-        String titre = PattrenUtils.getStringInput("Entrez le titre du document :");
+        System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"|• Recherche un document (Magazine)"  + CostumColor.RESET);
+
+        String titre = PattrenUtils.getStringInput("Entrez le titre du document Recherche :");
         MagasinImp.RechDoc(titre);
     }
 }
