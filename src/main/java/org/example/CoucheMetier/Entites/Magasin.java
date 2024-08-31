@@ -1,6 +1,7 @@
 package org.example.CoucheMetier.Entites;
 
 import org.example.CoucheMetier.Entites.Abstractions.Document;
+import org.example.CouchePresentation.CostumColor;
 
 import java.time.LocalDate;
 
@@ -18,10 +19,12 @@ public class Magasin extends Document {
     public void emprunter() {
         if (!this.isStatus()) {
             this.setStatus(true);
-            System.out.println("Le magazine a été emprunté avec succès.");
+
+            System.out.println(CostumColor.WHITE_BOLD_BRIGHT+"Le magazine a été emprunté avec succès."+ CostumColor.RESET
+            );
 
         }else{
-            System.out.println("Le magazine est déjà emprunté.");
+            System.out.println(CostumColor.WHITE_BOLD_BRIGHT+"Le magazine est déjà emprunté."+ CostumColor.RESET);
 
         }
     }
