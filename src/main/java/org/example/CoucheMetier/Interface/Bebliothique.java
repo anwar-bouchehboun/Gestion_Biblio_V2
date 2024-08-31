@@ -11,4 +11,6 @@ public interface Bebliothique <Doc extends  Document> {
     Optional<Doc> getDoc(String titre);
     void afficherDetails();
    Optional<Doc> RechDoc(String titre);
+
+    void getIdRech(int id);
 }

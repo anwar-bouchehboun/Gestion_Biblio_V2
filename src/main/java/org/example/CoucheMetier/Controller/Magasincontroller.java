@@ -47,12 +47,11 @@ public class Magasincontroller {
                     afficheDetailsLivre();
                     break;
                 case "5":
-                    RechDocLivre();
+                    MenuRche();
                     break;
                 case "6" :
                     System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"-----_____Exit (Magazine)_______------"+ CostumColor.RESET);
                     return;
-
                 default:
                     System.out.println(CostumColor.RED_BOLD_BRIGHT+"Invalid choice Menu Magasin");
                     break;
@@ -112,5 +111,41 @@ public class Magasincontroller {
 
         String titre = PattrenUtils.getStringInput("Entrez le titre du document Recherche :");
         MagasinImp.RechDoc(titre);
+    }
+
+    //Get ID Recherche ID
+    public  void getId(){
+        int id = PattrenUtils.getIntInput("Entrez l'ID du document (numérique) :");
+        MagasinImp.getIdRech(id);
+    }
+
+    public void MenuRche(){
+        do {
+            System.out.println(CostumColor.BLUE_BOLD_BRIGHT+"|Choose  Option from Below According to your Designation  : " + CostumColor.RESET);
+            System.out.println("|Press 1 to" +CostumColor.PURPLE_BOLD_BRIGHT +"|• Recherche titre "      + CostumColor.RESET);
+            System.out.println("|Press 2 to" +CostumColor.PURPLE_BOLD_BRIGHT +"|• Recherche ID"  + CostumColor.RESET);
+            System.out.println("|Press 3 to" +CostumColor.PURPLE_BOLD_BRIGHT +"| _____EXIT (Recherche) __________"+ CostumColor.RESET);
+            System.out.println(CostumColor.BROWN_BACKGROUND+CostumColor.WHITE_BOLD_BRIGHT+"----------------------------------------------------------- "+ CostumColor.RESET);
+
+            System.out.println("Choix => : " +CostumColor.PURPLE_BOLD_BRIGHT + " CHOIX "+ CostumColor.RESET);
+            Scanner choix= new Scanner(System.in);
+            String ch = choix.nextLine();
+            switch (ch){
+                case "1":
+                    RechDocLivre();
+                    break;
+                case "2":
+                    getId();
+                    break;
+
+                case "3" :
+                    System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"-----_____Exit Recherche ------"+ CostumColor.RESET);
+                    return;
+
+                default:
+                    System.out.println(CostumColor.RED_BOLD_BRIGHT+"Invalid choice");
+                    break;
+            }
+        }while (true);
     }
 }

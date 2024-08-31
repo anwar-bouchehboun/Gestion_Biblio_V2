@@ -58,4 +58,12 @@ public class MagasinImp implements Bebliothique<Magasin> {
             Magasins.forEach(Magasin::afficherDetails);
         }
     }
+
+    public void getIdRech(int id){
+        Optional<Magasin> result = Optional.ofNullable(listeMapping.get(id));
+        result.ifPresentOrElse(
+                Magasin::afficherDetailsMagsin,
+                () -> System.out.println("No Magasin found for the given ID")
+        );
+    }
 }

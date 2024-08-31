@@ -2,6 +2,7 @@ package org.example.CoucheMetier.Interface.Implemnation;
 
 
 import org.example.CoucheMetier.Entites.Livre;
+import org.example.CoucheMetier.Entites.Magasin;
 import org.example.CoucheMetier.Interface.Bebliothique;
 import org.example.CouchePresentation.CostumColor;
 
@@ -49,6 +50,7 @@ public class LivreImp implements Bebliothique<Livre> {
     }
 
 
+
     @Override
     public void afficherDetails() {
 
@@ -63,6 +65,12 @@ public class LivreImp implements Bebliothique<Livre> {
 
            livres.forEach(Livre::afficherDetails);
         }
+
+    }
+
+    @Override
+    public void getIdRech(int id){
+         // return Optional.ofNullable(listeMapping.get(id));
 
     }
 }

@@ -83,7 +83,7 @@ public class Livre extends Document {
                 ", datePublication='" + getDatePublication() + '\'' +
                 ", nombreDePages=" + getNombreDePages() +
                 ", Isbn=" + getIsbn() +
-
+                ", Status=" + (isStatus() ? "Emprunté" : "Disponible") +
                 '"';
     }
 }

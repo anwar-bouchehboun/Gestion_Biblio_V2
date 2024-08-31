@@ -77,6 +77,7 @@ public class Magasin extends Document {
                 ", datePublication='" + getDatePublication() + '\'' +
                 ", nombreDePages=" + getNombreDePages() +
                 ", Numero=" + Numero +
+                ", Status=" + (isStatus() ? "Emprunté" : "Disponible") +
 
                 '}';
     }

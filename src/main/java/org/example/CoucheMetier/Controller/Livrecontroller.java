@@ -114,4 +114,9 @@ public class Livrecontroller {
         String titre = PattrenUtils.getStringInput("Entrez le titre du document Recherche :");
         livreImp.RechDoc(titre);
     }
+    //Get ID Recherche ID
+    public  void getId(){
+        int id = PattrenUtils.getIntInput("Entrez l'ID du document (numérique) :");
+        livreImp.getIdRech(id);
+    }
 }
