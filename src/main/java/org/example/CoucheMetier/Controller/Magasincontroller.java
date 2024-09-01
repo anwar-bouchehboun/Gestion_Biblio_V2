@@ -37,17 +37,17 @@ public class Magasincontroller {
                     AddOoc();
                     break;
                 case "2":
-                    emprunterLivre();
+                    emprunterMagasin();
                     break;
                 case "3":
-                    retournerLivre();
+                    retournerMagasin();
                     break;
                 case "4":
 
-                    afficheDetailsLivre();
+                    afficheDetailsMagasin();
                     break;
                 case "5":
-                    MenuRche();
+                    Menumagasin();
                     break;
                 case "6" :
                     System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"-----_____Exit (Magazine)_______------"+ CostumColor.RESET);
@@ -60,10 +60,10 @@ public class Magasincontroller {
 
     }
 
-    public  void afficheDetailsLivre() {
+    public  void afficheDetailsMagasin() {
+
         MagasinImp.afficherDetails();
     }
-
     public void AddOoc(){
         try  {
             int id = PattrenUtils.getIntInput("Entrez l'ID du document (numérique) :");
@@ -95,18 +95,18 @@ public class Magasincontroller {
             System.err.println("Une erreur s'est produite lors de l'ajout du Doc: " + e.getMessage());
         }
     }
-    public void emprunterLivre(){
+    public void emprunterMagasin(){
         System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"|• Emprunter un document (Magazine)"  + CostumColor.RESET);
         String titre = PattrenUtils.getStringInput("Entrez le titre du document emprunter :");
         MagasinImp.emprunt(titre);
     }
-    public void retournerLivre(){
+    public void retournerMagasin(){
         System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"|• Retourner un document (Magazine)"  + CostumColor.RESET);
 
         String titre = PattrenUtils.getStringInput("Entrez le titre du document retourner :");
         MagasinImp.retourner(titre);
     }
-    public void RechDocLivre(){
+    public void RechDocMagasin(){
         System.out.println(CostumColor.PURPLE_BOLD_BRIGHT +"|• Recherche un document (Magazine)"  + CostumColor.RESET);
 
         String titre = PattrenUtils.getStringInput("Entrez le titre du document Recherche :");
@@ -114,12 +114,12 @@ public class Magasincontroller {
     }
 
     //Get ID Recherche ID
-    public  void getId(){
+    public  void getIdMagasin(){
         int id = PattrenUtils.getIntInput("Entrez l'ID du document (numérique) :");
         MagasinImp.getIdRech(id);
     }
 
-    public void MenuRche(){
+    public void Menumagasin(){
         do {
             System.out.println(CostumColor.BLUE_BOLD_BRIGHT+"|Choose  Option from Below According to your Designation  : " + CostumColor.RESET);
             System.out.println("|Press 1 to" +CostumColor.PURPLE_BOLD_BRIGHT +"|• Recherche titre "      + CostumColor.RESET);
@@ -132,10 +132,10 @@ public class Magasincontroller {
             String ch = choix.nextLine();
             switch (ch){
                 case "1":
-                    RechDocLivre();
+                    RechDocMagasin();
                     break;
                 case "2":
-                    getId();
+                    getIdMagasin();
                     break;
 
                 case "3" :

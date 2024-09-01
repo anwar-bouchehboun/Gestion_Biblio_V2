@@ -70,7 +70,11 @@ public class LivreImp implements Bebliothique<Livre> {
 
     @Override
     public void getIdRech(int id){
-         // return Optional.ofNullable(listeMapping.get(id));
+        Optional<Livre> result = Optional.ofNullable(listeMapping.get(id));
+        result.ifPresentOrElse(
+                Livre::afficherDetailslivre,
+                () -> System.out.println("No Livre found for the given ID")
+        );
 
     }
 }
